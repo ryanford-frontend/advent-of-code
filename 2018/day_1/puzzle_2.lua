@@ -1,14 +1,14 @@
 local input = io.open("input.txt"):read("*a")
 
-local function addInputs(i, t)
+local function addInputs(sum, collection)
    for number in input:gmatch("-?%d+") do
-      i = i + tonumber(number)
-      for _,v in ipairs(t) do
-         if v == i then print(i) return end
+      sum = sum + tonumber(number)
+      if collection[sum] then
+         return print(sum)
       end
-      t[#t + 1] = i
+      collection[sum] = true 
    end
-   return addInputs(i, t)
+   return addInputs(sum, collection)
 end
 
-addInputs(0, { 0 })
+addInputs(0, { ["0"] = true })
