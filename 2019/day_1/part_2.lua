@@ -1,4 +1,4 @@
-local initial_cost = require('part_1.lua')
+local initial_cost = require('part_1')
 local input = io.open('input.txt')
 local sum = 0
 local function total_calc(weight, cost)

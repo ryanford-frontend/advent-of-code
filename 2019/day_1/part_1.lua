@@ -9,6 +9,6 @@ for num in input:lines() do
 	sum = sum + calc_cost(tonumber(num))
 end
 
--- print(sum)
+print(sum)
 
 return calc_cost
